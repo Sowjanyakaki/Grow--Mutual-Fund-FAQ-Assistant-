@@ -4,7 +4,7 @@ An intelligent FAQ assistant powered by LLMs to answer questions about mutual fu
 
 ## Overview
 
-This project leverages advanced language models and semantic search to provide accurate, context-aware answers to frequently asked questions about mutual funds. The assistant uses RAG (Retrieval-Augmented Generation) to ensure responses are grounded in reliable financial information.
+This project leverages advanced language models and semantic search to provide accurate, context-aware answers to frequently asked questions about mutual funds. The assistant uses RAG (Retrieval-Augmented Generation) to retrieve relevant information and provide informed responses.
 
 ## Features
 
@@ -70,15 +70,13 @@ streamlit run app.py
 
 ## Sources
 
-This project utilizes information from the following sources:
+This project utilizes information from the following Tata mutual fund sources (ingested via `ingest.py`):
 
-- [Investopedia - Mutual Funds](https://www.investopedia.com/terms/m/mutualfund.asp)
-- [AMFI India](https://www.amfiindia.com/)
-- [SEBI - Securities and Exchange Board of India](https://www.sebi.gov.in/)
-- [NSE - National Stock Exchange](https://www.nseindia.com/)
-- [BSE - Bombay Stock Exchange](https://www.bseindia.com/)
-- Official mutual fund house websites and prospectuses
-- Financial news portals and publications
+- [Tata Gold ETF FOF Direct Growth](https://groww.in/mutual-funds/tata-gold-etf-fof-direct-growth)
+- [Tata Silver ETF FOF Direct Growth](https://groww.in/mutual-funds/tata-silver-etf-fof-direct-growth)
+- [Tata Small Cap Fund Direct Growth](https://groww.in/mutual-funds/tata-small-cap-fund-direct-growth)
+- [Tata Multicap Fund Direct Growth](https://groww.in/mutual-funds/tata-multicap-fund-direct-growth)
+- [Tata Mid Cap Direct Plan Growth](https://groww.in/mutual-funds/tata-mid-cap-direct-plan-growth)
 
 ## Disclaimer
 
@@ -90,7 +88,7 @@ This Mutual Fund FAQ Assistant is provided for educational and informational pur
 
 - **No Liability**: The creators and maintainers of this tool are not responsible for any financial losses, damages, or consequences arising from the use of information provided by this assistant.
 
-- **Consult Professionals**: Before making any investment decisions, please consult with qualified financial advisors, investment professionals, or legal experts who can assess your individual financial situation and risk tolerance.
+- **Consult Professionals**: Before making any investment decisions, please consult with qualified financial advisors, investment professionals, or legal experts who can assess your individual financial situation and goals.
 
 - **Market Risk**: Mutual fund investments carry market risk and are subject to various factors including economic conditions, market fluctuations, and regulatory changes.
 
