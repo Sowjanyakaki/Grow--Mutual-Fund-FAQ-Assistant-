@@ -1,0 +1,41 @@
+name: Scheduled Data Ingestion
+
+on:
+  schedule:
+    # Runs daily at 04:30 UTC, which is 10:00 AM IST
+    - cron: '30 4 * * *'
+  workflow_dispatch: # Allows you to run it manually from the Actions tab
+
+jobs:
+  update-database:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Ingestion Script
+      run: |
+        python ingest.py
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        # Using the standard github actions bot email
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        
+        # Add the updated chroma_db directory
+        git add chroma_db/
+        
+        # Commit if there are changes
+        git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update chroma_db" && git push)
